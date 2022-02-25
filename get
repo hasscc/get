@@ -7,7 +7,7 @@ set -e
 REPO_NAME=$(basename "$REPO_PATH")
 
 [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="$1"
-[ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="china"
+[ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
 [ -z "$HUB_DOMAIN" ] && HUB_DOMAIN="github.com"
 ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/archive/$ARCHIVE_TAG.zip"
 
