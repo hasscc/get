@@ -77,9 +77,6 @@ if [ -n "$haPath" ]; then
     info "Downloading..."
     wget -t 2 -O "$ccPath/$ARCHIVE_TAG.zip" "$ARCHIVE_URL"
 
-    info "Unpacking..."
-    unzip -o "$ccPath/$ARCHIVE_TAG.zip" -d "$ccPath" >/dev/null 2>&1
-
     if [ -d "$ccPath/$DOMAIN" ]; then
         warn "custom_components/$DOMAIN directory already exist, cleaning up..."
         rm -R "$ccPath/$DOMAIN"
@@ -89,6 +86,17 @@ if [ -n "$haPath" ]; then
     if [ ! -d "$ccPath/$REPO_NAME-$ver" ]; then
         ver=$ARCHIVE_TAG
     fi
+
+    info "Unpacking..."
+    str="/releases/"
+    if [ ${ARCHIVE_URL/${str}/} = $ARCHIVE_URL ]; then
+        unzip -o "$ccPath/$ARCHIVE_TAG.zip" -d "$ccPath" >/dev/null 2>&1
+    else
+        dir="$ccPath/$REPO_NAME-$ver/custom_components/$DOMAIN"
+        mkdir -p $dir
+        unzip -o "$ccPath/$ARCHIVE_TAG.zip" -d $dir >/dev/null 2>&1
+    fi
+
     if [ ! -d "$ccPath/$REPO_NAME-$ver" ]; then
         error "Could not find $REPO_NAME-$ver directory" false
         error "找不到文件夹: $REPO_NAME-$ver"
