@@ -1,5 +1,5 @@
 #!/bin/bash
-# wget -q -O - https://cdn.jsdelivr.net/gh/hasscc/get/get | DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
+# wget -q -O - https://raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
 set -e
 
 [ -z "$DOMAIN" ] && DOMAIN="hacs"
