@@ -3,21 +3,23 @@
 ## 指定集成
 
 ```bash
-wget -O - https://cdn.jsdelivr.net/gh/hasscc/get/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+wget -O - https://raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
 ```
 
 ## 指定版本
 
 ```bash
-wget -O - https://cdn.jsdelivr.net/gh/hasscc/get/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=v1.0.0 bash -
-wget -O - https://cdn.jsdelivr.net/gh/hasscc/get/get | DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=master bash -
+wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=v1.0.0 bash -
+wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=master bash -
 ```
 
 ## 指定镜像
 
 ```bash
-wget -O - https://cdn.jsdelivr.net/gh/hasscc/get/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
-wget -O - https://cdn.jsdelivr.net/gh/hasscc/get/get | HUB_DOMAIN=hub.fastgit.org DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
+wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
+wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | HUB_DOMAIN=hub.fastgit.xyz DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
 ```
 
 ## 选项说明
