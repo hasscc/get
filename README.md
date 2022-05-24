@@ -25,7 +25,7 @@ wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | HUB_DOMAIN=hu
 ## 选项说明
 
 ```yaml
-DOMAIN:      自定义插件域，及下载后在`custom_components`目录下的文件夹名
+DOMAIN:      自定义插件域，下载后在`custom_components`目录下的文件夹名
 REPO_PATH:   插件的Github仓库路径
 ARCHIVE_TAG: 插件的版本/分支，默认为`master`
 HUB_DOMAIN:  指定Github镜像
