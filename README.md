@@ -62,5 +62,6 @@ HUB_DOMAIN:  指定Github镜像
 3. 在HA开发者工具中调用服务
    - [`service: shell_command.update_hacs_china`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_hacs_china)
    - [`service: shell_command.update_xiaomi_miot`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_xiaomi_miot)
+   - [`service: shell_command.update_edge_tts`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_edge_tts)
    - [`service: shell_command.update_xiaomi_gateway3`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_xiaomi_gateway3)
    - [`service: shell_command.update_file_explorer`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_file_explorer)
