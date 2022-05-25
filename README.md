@@ -27,7 +27,7 @@ wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | HUB_DOMAIN=hu
 ```yaml
 DOMAIN:      自定义插件域，下载后在`custom_components`目录下的文件夹名
 REPO_PATH:   插件的Github仓库路径
-ARCHIVE_TAG: 插件的版本/分支，默认为`master`
+ARCHIVE_TAG: 插件的版本/分支，默认为`master`，部分插件支持`latest`
 HUB_DOMAIN:  指定Github镜像
 ```
 
@@ -40,11 +40,15 @@ HUB_DOMAIN:  指定Github镜像
 
       # 更新HACS极速版
       update_hacs_china: |-
-        wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+        wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=latest bash -
 
       # 更新Xiaomi Miot Auto
       update_xiaomi_miot: |-
-        wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=master bash -
+        wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=latest bash -
+
+      # 更新Edge TTS
+      update_edge_tts: |-
+        wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=edge_tts REPO_PATH=hasscc/hass-edge-tts ARCHIVE_TAG=main bash -
 
       # 更新XiaomiGateway3
       update_xiaomi_gateway3: |-
