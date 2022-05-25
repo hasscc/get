@@ -15,10 +15,6 @@
       update_xiaomi_miot: |-
         wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=latest bash -
 
-      # 更新Edge TTS
-      update_edge_tts: |-
-        wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=edge_tts REPO_PATH=hasscc/hass-edge-tts ARCHIVE_TAG=main bash -
-
       # 更新XiaomiGateway3
       update_xiaomi_gateway3: |-
         wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=xiaomi_gateway3 REPO_PATH=AlexxIT/XiaomiGateway3 ARCHIVE_TAG=master bash -
@@ -26,14 +22,18 @@
       # 更新文件管理器
       update_file_explorer: |-
         wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=ha_file_explorer REPO_PATH=shaonianzhentan/ha_file_explorer ARCHIVE_TAG=master bash -
+
+      # 更新Edge TTS
+      update_edge_tts: |-
+        wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=edge_tts REPO_PATH=hasscc/hass-edge-tts ARCHIVE_TAG=main bash -
     ```
 2. 重启HA
 3. 在HA开发者工具中调用服务
    - [`service: shell_command.update_hacs_china`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_hacs_china)
    - [`service: shell_command.update_xiaomi_miot`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_xiaomi_miot)
-   - [`service: shell_command.update_edge_tts`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_edge_tts)
    - [`service: shell_command.update_xiaomi_gateway3`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_xiaomi_gateway3)
    - [`service: shell_command.update_file_explorer`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_file_explorer)
+   - [`service: shell_command.update_edge_tts`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_edge_tts)
 
 ## 指定集成
 
