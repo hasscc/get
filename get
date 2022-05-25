@@ -15,6 +15,8 @@ if [ "$DOMAIN" = "hacs" ]; then
     if [ "$ARCHIVE_TAG" = "main" ] || [ "$ARCHIVE_TAG" = "china" ]; then
         ARCHIVE_TAG="latest"
     fi
+fi
+if [ "$ARCHIVE_TAG" = "latest" ]; then
     ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/releases/$ARCHIVE_TAG/download/$DOMAIN.zip"
 fi
 
