@@ -1,36 +1,5 @@
 # Home Assistant 自定义集成下载脚本
 
-## 指定集成
-
-```bash
-wget -O - https://raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
-wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
-wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
-```
-
-## 指定版本
-
-```bash
-wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=v1.0.0 bash -
-wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=master bash -
-```
-
-## 指定镜像
-
-```bash
-wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
-wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | HUB_DOMAIN=hub.fastgit.xyz DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
-```
-
-## 选项说明
-
-```yaml
-DOMAIN:      自定义插件域，下载后在`custom_components`目录下的文件夹名
-REPO_PATH:   插件的Github仓库路径
-ARCHIVE_TAG: 插件的版本/分支，默认为`master`，部分插件支持`latest`
-HUB_DOMAIN:  指定Github镜像
-```
-
 <a name="shell_command"></a>
 ## 通过HA服务安装/更新插件
 
@@ -65,3 +34,34 @@ HUB_DOMAIN:  指定Github镜像
    - [`service: shell_command.update_edge_tts`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_edge_tts)
    - [`service: shell_command.update_xiaomi_gateway3`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_xiaomi_gateway3)
    - [`service: shell_command.update_file_explorer`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_file_explorer)
+
+## 指定集成
+
+```bash
+wget -O - https://raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+```
+
+## 指定版本
+
+```bash
+wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=v1.0.0 bash -
+wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=master bash -
+```
+
+## 指定镜像
+
+```bash
+wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | HUB_DOMAIN=hub.fastgit.xyz DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
+```
+
+## 选项说明
+
+```yaml
+DOMAIN:      自定义插件域，下载后在`custom_components`目录下的文件夹名
+REPO_PATH:   插件的Github仓库路径
+ARCHIVE_TAG: 插件的版本/分支，默认为`master`，部分插件支持`latest`
+HUB_DOMAIN:  指定Github镜像
+```
