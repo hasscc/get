@@ -18,7 +18,7 @@ wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=xiaomi
 ## 指定镜像
 
 ```bash
-wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
+wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
 wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | HUB_DOMAIN=hub.fastgit.xyz DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
 ```
 
@@ -30,3 +30,22 @@ REPO_PATH:   插件的Github仓库路径
 ARCHIVE_TAG: 插件的版本/分支，默认为`master`
 HUB_DOMAIN:  指定Github镜像
 ```
+
+## 通过HA服务安装/更新插件
+
+1. 复制下面的代码到HA配置文件`configuration.yaml`
+    ```yaml
+    shell_command:
+
+      # 更新HACS极速版
+      update_hacs_china: |-
+        wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+
+      # 更新Xiaomi Miot Auto
+      update_xiaomi_miot: |-
+        wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=master bash -
+    ```
+2. 重启HA
+3. 在HA开发者工具中调用服务
+   - [`service: shell_command.update_hacs_china`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_hacs_china)
+   - [`service: shell_command.update_xiaomi_miot`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_xiaomi_miot)
