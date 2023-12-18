@@ -8,7 +8,7 @@ REPO_NAME=$(basename "$REPO_PATH")
 
 [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="$1"
 [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
-[ -z "$HUB_DOMAIN" ] && HUB_DOMAIN="ghps.cc/github.com"
+[ -z "$HUB_DOMAIN" ] && HUB_DOMAIN="cfrp.hacs.vip/github.com"
 ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/archive/$ARCHIVE_TAG.zip"
 
 if [ "$ARCHIVE_TAG" = "latest" ]; then
