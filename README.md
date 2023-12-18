@@ -23,6 +23,10 @@
       update_file_explorer: |-
         wget -O - https://hacs.vip/get | DOMAIN=ha_file_explorer REPO_PATH=shaonianzhentan/ha_file_explorer ARCHIVE_TAG=master bash -
 
+      # 更新天气插件
+      update_tianqi: |-
+        wget -O - https://hacs.vip/get | DOMAIN=tianqi REPO_PATH=hasscc/tianqi ARCHIVE_TAG=main bash -
+
       # 更新Edge TTS
       update_edge_tts: |-
         wget -O - https://hacs.vip/get | DOMAIN=edge_tts REPO_PATH=hasscc/hass-edge-tts ARCHIVE_TAG=main bash -
@@ -39,9 +43,7 @@
 
 ```bash
 wget -O - https://hacs.vip/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
-wget -O - https://raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
-wget -O - https://raw.githubusercontents.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
-wget -O - https://ghproxy.com/raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+wget -O - https://hacs.vip/get | DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=latest bash -
 ```
 
 ## 指定版本
