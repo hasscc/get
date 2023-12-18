@@ -9,23 +9,23 @@
 
       # 更新HACS极速版
       update_hacs_china: |-
-        wget -O - https://hacs.vip/get | HUB_DOMAIN=ghps.cc/github.com bash -
+        wget -O - https://hacs.vip/get | bash -
 
       # 更新Xiaomi Miot Auto
       update_xiaomi_miot: |-
-        wget -O - https://hacs.vip/get | HUB_DOMAIN=ghps.cc/github.com DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=latest bash -
+        wget -O - https://hacs.vip/get | DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=latest bash -
 
       # 更新XiaomiGateway3
       update_xiaomi_gateway3: |-
-        wget -O - https://hacs.vip/get | HUB_DOMAIN=ghps.cc/github.com DOMAIN=xiaomi_gateway3 REPO_PATH=AlexxIT/XiaomiGateway3 ARCHIVE_TAG=master bash -
+        wget -O - https://hacs.vip/get | DOMAIN=xiaomi_gateway3 REPO_PATH=AlexxIT/XiaomiGateway3 ARCHIVE_TAG=master bash -
 
       # 更新文件管理器
       update_file_explorer: |-
-        wget -O - https://hacs.vip/get | HUB_DOMAIN=ghps.cc/github.com DOMAIN=ha_file_explorer REPO_PATH=shaonianzhentan/ha_file_explorer ARCHIVE_TAG=master bash -
+        wget -O - https://hacs.vip/get | DOMAIN=ha_file_explorer REPO_PATH=shaonianzhentan/ha_file_explorer ARCHIVE_TAG=master bash -
 
       # 更新Edge TTS
       update_edge_tts: |-
-        wget -O - https://hacs.vip/get | HUB_DOMAIN=ghps.cc/github.com DOMAIN=edge_tts REPO_PATH=hasscc/hass-edge-tts ARCHIVE_TAG=main bash -
+        wget -O - https://hacs.vip/get | DOMAIN=edge_tts REPO_PATH=hasscc/hass-edge-tts ARCHIVE_TAG=main bash -
     ```
 2. 重启HA
 3. 在HA开发者工具中调用服务
@@ -54,7 +54,7 @@ wget -O - https://hacs.vip/get | DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi
 ## 指定镜像
 
 ```bash
-wget -O - https://hacs.vip/get | HUB_DOMAIN=ghproxy.com/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
+wget -O - https://hacs.vip/get | HUB_DOMAIN=ghps.cc/github.com DOMAIN=hacs REPO_PATH=hacs-china/integration ARCHIVE_TAG=china bash -
 wget -O - https://hacs.vip/get | HUB_DOMAIN=hub.fastgit.xyz DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
 ```
 
