@@ -11,6 +11,7 @@ case $DOMAIN in
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="latest"
         ;;
     xiaomi_miot | miot)
+        DOMAIN="xiaomi_miot"
         [ -z "$REPO_PATH" ] && REPO_PATH="al-one/hass-xiaomi-miot"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="latest"
         ;;
