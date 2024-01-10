@@ -112,15 +112,7 @@ if [ -n "$haPath" ]; then
     info "Downloading..."
     wget -t 2 -O "$ccPath/$ARCHIVE_TAG.zip" "$ARCHIVE_URL"
 
-    if [ -d "$ccPath/$DOMAIN" ]; then
-        warn "custom_components/$DOMAIN directory already exist, cleaning up..."
-        rm -R "$ccPath/$DOMAIN"
-    fi
-
     ver=${ARCHIVE_TAG/#v/}
-    if [ ! -d "$ccPath/$REPO_NAME-$ver" ]; then
-        ver=$ARCHIVE_TAG
-    fi
 
     info "Unpacking..."
     str="/releases/"
@@ -131,15 +123,25 @@ if [ -n "$haPath" ]; then
         mkdir -p $dir
         unzip -o "$ccPath/$ARCHIVE_TAG.zip" -d $dir >/dev/null 2>&1
     fi
+    rm -rf "$ccPath/$ARCHIVE_TAG.zip"
 
+    if [ ! -d "$ccPath/$REPO_NAME-$ver" ]; then
+        ver=$ARCHIVE_TAG
+    fi
     if [ ! -d "$ccPath/$REPO_NAME-$ver" ]; then
         error "Could not find $REPO_NAME-$ver directory" false
         error "找不到文件夹: $REPO_NAME-$ver"
     fi
+
+    if [ -d "$ccPath/$DOMAIN" ]; then
+        warn "custom_components/$DOMAIN directory already exist, cleaning up..."
+        rm -R "$ccPath/$DOMAIN"
+    fi
+
+    info "Copying new files..."
     cp -rf "$ccPath/$REPO_NAME-$ver/custom_components/$DOMAIN" "$ccPath"
 
     info "Removing temp files..."
-    rm -rf "$ccPath/$ARCHIVE_TAG.zip"
     rm -rf "$ccPath/$REPO_NAME-$ver"
     info "Installation complete."
     info "安装成功！"
