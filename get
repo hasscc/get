@@ -30,6 +30,7 @@ case $DOMAIN in
         [ -z "$REPO_PATH" ] && REPO_PATH="shaonianzhentan/ha_file_explorer"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
         ;;
+esac
 
 [ -z "$REPO_PATH" ] && REPO_PATH="hacs-china/integration"
 REPO_NAME=$(basename "$REPO_PATH")
