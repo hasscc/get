@@ -27,6 +27,10 @@ case $DOMAIN in
         [ -z "$REPO_PATH" ] && REPO_PATH="hasscc/hass-edge-tts"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
         ;;
+    yeelight_pro)
+        [ -z "$REPO_PATH" ] && REPO_PATH="hasscc/yeelight-pro"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
+        ;;
     ha_file_explorer)
         [ -z "$REPO_PATH" ] && REPO_PATH="shaonianzhentan/ha_file_explorer"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
