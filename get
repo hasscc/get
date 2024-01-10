@@ -1,23 +1,49 @@
 #!/bin/bash
-# wget -q -O - https://raw.githubusercontent.com/hasscc/get/main/get | DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
+# wget -q -O - https://hacs.vip/get | DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
 set -e
 
 [ -z "$DOMAIN" ] && DOMAIN="hacs"
+[ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="$1"
+
+case $DOMAIN in
+    hacs)
+        [ -z "$REPO_PATH" ] && REPO_PATH="hacs-china/integration"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="latest"
+        ;;
+    xiaomi_miot | miot)
+        [ -z "$REPO_PATH" ] && REPO_PATH="al-one/hass-xiaomi-miot"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="latest"
+        ;;
+    xiaomi_gateway3)
+        [ -z "$REPO_PATH" ] && REPO_PATH="AlexxIT/XiaomiGateway3"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
+        ;;
+    tianqi)
+        [ -z "$REPO_PATH" ] && REPO_PATH="hasscc/tianqi"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
+        ;;
+    edge_tts)
+        [ -z "$REPO_PATH" ] && REPO_PATH="hasscc/hass-edge-tts"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
+        ;;
+    ha_file_explorer)
+        [ -z "$REPO_PATH" ] && REPO_PATH="shaonianzhentan/ha_file_explorer"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
+        ;;
+
 [ -z "$REPO_PATH" ] && REPO_PATH="hacs-china/integration"
 REPO_NAME=$(basename "$REPO_PATH")
 
-[ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="$1"
 [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
 [ -z "$HUB_DOMAIN" ] && HUB_DOMAIN="cfrp.hacs.vip/github.com"
 ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/archive/$ARCHIVE_TAG.zip"
 
-if [ "$ARCHIVE_TAG" = "latest" ]; then
-    ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/releases/$ARCHIVE_TAG/download/$DOMAIN.zip"
-fi
 if [ "$DOMAIN" = "hacs" ]; then
     if [ "$ARCHIVE_TAG" = "main" ] || [ "$ARCHIVE_TAG" = "china" ] || [ "$ARCHIVE_TAG" = "master" ]; then
         ARCHIVE_TAG="latest"
     fi
+fi
+if [ "$ARCHIVE_TAG" = "latest" ]; then
     ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/releases/$ARCHIVE_TAG/download/$DOMAIN.zip"
 fi
 
