@@ -49,7 +49,7 @@ if [ "$DOMAIN" = "hacs" ]; then
         ARCHIVE_TAG="latest"
     fi
 fi
-if [ "$ARCHIVE_TAG" = "latest" ]; then
+if [ "$ARCHIVE_TAG" = "latest" ] || [ "$DOMAIN" = "hacs" ]; then
     ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/releases/$ARCHIVE_TAG/download/$DOMAIN.zip"
 fi
 
