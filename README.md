@@ -7,29 +7,35 @@
     ```yaml
     shell_command:
 
-      # 更新HACS极速版
+      # HACS极速版
       update_hacs_china: |-
-        wget -O - https://hacs.vip/get | bash -
+        wget -O - https://get.hacs.vip | bash -
 
-      # 更新Xiaomi Miot Auto
+      # Xiaomi Miot Auto
       update_xiaomi_miot: |-
-        wget -O - https://hacs.vip/get | DOMAIN=xiaomi_miot REPO_PATH=al-one/hass-xiaomi-miot ARCHIVE_TAG=latest bash -
+        wget -O - https://get.hacs.vip | DOMAIN=xiaomi_miot bash -
+      update_xiaomi_miot_beta: |-
+        wget -O - https://get.hacs.vip | DOMAIN=xiaomi_miot ARCHIVE_TAG=master bash -
 
-      # 更新XiaomiGateway3
+      # XiaomiGateway3
       update_xiaomi_gateway3: |-
-        wget -O - https://hacs.vip/get | DOMAIN=xiaomi_gateway3 REPO_PATH=AlexxIT/XiaomiGateway3 ARCHIVE_TAG=master bash -
+        wget -O - https://get.hacs.vip | DOMAIN=xiaomi_gateway3 bash -
 
-      # 更新文件管理器
+      # 文件管理器
       update_file_explorer: |-
-        wget -O - https://hacs.vip/get | DOMAIN=ha_file_explorer REPO_PATH=shaonianzhentan/ha_file_explorer ARCHIVE_TAG=master bash -
+        wget -O - https://get.hacs.vip | DOMAIN=ha_file_explorer bash -
 
-      # 更新天气插件
+      # 天气插件
       update_tianqi: |-
-        wget -O - https://hacs.vip/get | DOMAIN=tianqi REPO_PATH=hasscc/tianqi ARCHIVE_TAG=main bash -
+        wget -O - https://get.hacs.vip | DOMAIN=tianqi bash -
 
-      # 更新Edge TTS
+      # Edge TTS
       update_edge_tts: |-
-        wget -O - https://hacs.vip/get | DOMAIN=edge_tts REPO_PATH=hasscc/hass-edge-tts ARCHIVE_TAG=main bash -
+        wget -O - https://get.hacs.vip | DOMAIN=edge_tts bash -
+
+      # 国家电网
+      update_state_grid: |-
+        wget -O - https://get.hacs.vip | DOMAIN=state_grid bash -
     ```
 2. 重启HA
 3. 在HA开发者工具中调用服务
@@ -39,6 +45,7 @@
    - [`service: shell_command.update_file_explorer`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_file_explorer)
    - [`service: shell_command.update_tianqi`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_tianqi)
    - [`service: shell_command.update_edge_tts`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_edge_tts)
+   - [`service: shell_command.update_state_grid`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_state_grid)
 
 ## 指定集成
 
