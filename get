@@ -35,6 +35,10 @@ case $DOMAIN in
         [ -z "$REPO_PATH" ] && REPO_PATH="shaonianzhentan/ha_file_explorer"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
         ;;
+    state_grid)
+        [ -z "$REPO_PATH" ] && REPO_PATH="hass-box/state-grid"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
+        ;;
 esac
 
 [ -z "$REPO_PATH" ] && REPO_PATH="hacs-china/integration"
