@@ -17,6 +17,10 @@
       update_xiaomi_miot_beta: |-
         wget -O - https://get.hacs.vip | DOMAIN=xiaomi_miot ARCHIVE_TAG=master bash -
 
+      # Xiaomi Home
+      update_xiaomi_home: |-
+        wget -O - https://get.hacs.vip | DOMAIN=xiaomi_home bash -
+
       # XiaomiGateway3
       update_xiaomi_gateway3: |-
         wget -O - https://get.hacs.vip | DOMAIN=xiaomi_gateway3 bash -
