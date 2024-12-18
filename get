@@ -15,6 +15,10 @@ case $DOMAIN in
         [ -z "$REPO_PATH" ] && REPO_PATH="al-one/hass-xiaomi-miot"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="latest"
         ;;
+    xiaomi_home)
+        [ -z "$REPO_PATH" ] && REPO_PATH="XiaoMi/ha_xiaomi_home"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="latest"
+        ;;
     xiaomi_gateway3)
         [ -z "$REPO_PATH" ] && REPO_PATH="AlexxIT/XiaomiGateway3"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
