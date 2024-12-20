@@ -51,6 +51,10 @@ case $DOMAIN in
         [ -z "$REPO_PATH" ] && REPO_PATH="larry-wong/bemfa"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
         ;;
+    midea_ac_lan)
+        [ -z "$REPO_PATH" ] && REPO_PATH="georgezhao2010/midea_ac_lan"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="latest"
+        ;;
     state_grid)
         [ -z "$REPO_PATH" ] && REPO_PATH="hass-box/state-grid"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
