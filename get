@@ -116,7 +116,7 @@ checkRequirement "unzip"
 
 function cget () {
     if [ -z "$(command -v "wget")" ]; then
-        curl -o "$1" "$2"
+        curl -fL -o "$1" "$2"
     else
         checkRequirement "wget"
         wget -t 2 -O "$1" "$2"
