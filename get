@@ -47,6 +47,10 @@ case $DOMAIN in
         [ -z "$REPO_PATH" ] && REPO_PATH="shaonianzhentan/ha_file_explorer"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
         ;;
+    bemfa)
+        [ -z "$REPO_PATH" ] && REPO_PATH="larry-wong/bemfa"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
+        ;;
     state_grid)
         [ -z "$REPO_PATH" ] && REPO_PATH="hass-box/state-grid"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
