@@ -1,5 +1,6 @@
 #!/bin/bash
 # wget -q -O - https://hacs.vip/get | DOMAIN=hacs REPO_PATH=hacs-china/integration bash -
+# curl -fsSL get.hacs.vip | DOMAIN=hacs bash
 set -e
 
 [ -z "$DOMAIN" ] && DOMAIN="hacs"
@@ -101,8 +102,8 @@ declare -a paths=(
     "/mnt/data/supervisor/homeassistant"
 )
 
-function info () { echo -e "${GREEN_COLOR}INFO: $1${NO_COLOR}";}
-function warn () { echo -e "${GREEN_YELLOW}WARN: $1${NO_COLOR}";}
+function info () { echo -e "${GREEN_COLOR}INFO: $1${NO_COLOR}"; }
+function warn () { echo -e "${GREEN_YELLOW}WARN: $1${NO_COLOR}"; }
 function error () { echo -e "${RED_COLOR}ERROR: $1${NO_COLOR}"; if [ "$2" != "false" ]; then exit 1;fi; }
 
 function checkRequirement () {
@@ -111,8 +112,16 @@ function checkRequirement () {
     fi
 }
 
-checkRequirement "wget"
 checkRequirement "unzip"
+
+function cget () {
+    if [ -z "$(command -v "wget")" ]; then
+        curl -o "$1" "$2"
+    else
+        checkRequirement "wget"
+        wget -t 2 -O "$1" "$2"
+    fi
+}
 
 info "Archive URL: $ARCHIVE_URL"
 info "Trying to find the correct directory..."
@@ -143,7 +152,7 @@ if [ -n "$haPath" ]; then
     cd "$ccPath" || error "Could not change path to $ccPath"
 
     info "Downloading..."
-    wget -t 2 -O "$ccPath/$ARCHIVE_TAG.zip" "$ARCHIVE_URL"
+    cget "$ccPath/$ARCHIVE_TAG.zip" "$ARCHIVE_URL"
 
     ver=${ARCHIVE_TAG/#v/}
 
