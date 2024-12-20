@@ -23,6 +23,10 @@ case $DOMAIN in
         [ -z "$REPO_PATH" ] && REPO_PATH="AlexxIT/XiaomiGateway3"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
         ;;
+    sonoff)
+        [ -z "$REPO_PATH" ] && REPO_PATH="AlexxIT/SonoffLAN"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
+        ;;
     tianqi)
         [ -z "$REPO_PATH" ] && REPO_PATH="hasscc/tianqi"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
