@@ -64,6 +64,10 @@ case $DOMAIN in
         [ -z "$REPO_PATH" ] && REPO_PATH="banto6/haier"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
         ;;
+    terncy)
+        [ -z "$REPO_PATH" ] && REPO_PATH="rxwen/homeassistant-terncy-component"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
+        ;;
     state_grid)
         [ -z "$REPO_PATH" ] && REPO_PATH="hass-box/state-grid"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
