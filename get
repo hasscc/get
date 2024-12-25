@@ -53,11 +53,15 @@ case $DOMAIN in
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
         ;;
     midea_ac_lan)
-        [ -z "$REPO_PATH" ] && REPO_PATH="georgezhao2010/midea_ac_lan"
+        [ -z "$REPO_PATH" ] && REPO_PATH="wuwentao/midea_ac_lan"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="latest"
         ;;
     midea_ac)
         [ -z "$REPO_PATH" ] && REPO_PATH="mill1000/midea-ac-py"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
+        ;;
+    haier)
+        [ -z "$REPO_PATH" ] && REPO_PATH="banto6/haier"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
         ;;
     state_grid)
