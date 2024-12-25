@@ -62,7 +62,7 @@ case $DOMAIN in
         ;;
     haier)
         [ -z "$REPO_PATH" ] && REPO_PATH="banto6/haier"
-        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
         ;;
     state_grid)
         [ -z "$REPO_PATH" ] && REPO_PATH="hass-box/state-grid"
