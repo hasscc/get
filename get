@@ -108,6 +108,7 @@ declare -a paths=(
     "$HOME/.homeassistant"
     "/usr/share/hassio/homeassistant"
     "/mnt/data/supervisor/homeassistant"
+    "/var/hass/config"
 )
 
 function info () { echo -e "${GREEN_COLOR}INFO: $1${NO_COLOR}"; }
