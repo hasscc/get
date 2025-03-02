@@ -68,9 +68,10 @@ case $DOMAIN in
         [ -z "$REPO_PATH" ] && REPO_PATH="rxwen/homeassistant-terncy-component"
         [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="main"
         ;;
-    state_grid)
-        [ -z "$REPO_PATH" ] && REPO_PATH="hass-box/state-grid"
-        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="master"
+    pyscript)
+        [ -z "$REPO_PATH" ] && REPO_PATH="custom-components/pyscript"
+        [ -z "$ARCHIVE_TAG" ] && ARCHIVE_TAG="latest"
+        [ -z "$FILENAME" ] && FILENAME="hass-custom-pyscript.zip"
         ;;
 esac
 
@@ -90,7 +91,8 @@ if [ "$DOMAIN" = "hacs" ]; then
     ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/releases/download/$ARCHIVE_TAG/$DOMAIN.zip"
 fi
 if [ "$ARCHIVE_TAG" = "latest" ]; then
-    ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/releases/$ARCHIVE_TAG/download/$DOMAIN.zip"
+    [ -z "$FILENAME" ] && FILENAME="$DOMAIN.zip"
+    ARCHIVE_URL="https://$HUB_DOMAIN/$REPO_PATH/releases/$ARCHIVE_TAG/download/$FILENAME"
 fi
 
 RED_COLOR='\033[0;31m'
