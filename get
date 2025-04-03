@@ -110,6 +110,7 @@ declare -a paths=(
     "/var/lib/homeassistant/homeassistant"
     "/usr/share/hassio/homeassistant"
     "/var/lib/hassio/homeassistant"
+    "/opt/hassio/homeassistant"
     "/mnt/data/supervisor/homeassistant"
     "/var/hass/config"
     "$HOME/.homeassistant"
